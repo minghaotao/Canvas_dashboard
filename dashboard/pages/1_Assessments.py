@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
 import matplotlib
+import numpy as np
 
 matplotlib.style.use('fivethirtyeight')
 
@@ -15,6 +16,8 @@ upload_file = st.file_uploader("Choose a CSV file")
 
 if upload_file is not None:
     data = pd.read_csv(upload_file)
+
+    data = data.replace(to_replace='None',value=np.NaN).dropna()
 
 
     def submission_due():
@@ -96,6 +99,6 @@ if upload_file is not None:
 
     # st.area_chart(report)
 
-    submission_due()
+    # submission_due()
     # st.pyplot(assignment_due())
     assignment_due()
