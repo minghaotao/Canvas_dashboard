@@ -17,7 +17,17 @@ upload_file = st.file_uploader("Choose a CSV file")
 if upload_file is not None:
     data = pd.read_csv(upload_file)
 
-    data = data.replace(to_replace='None',value=np.NaN).dropna()
+    # data = data.replace(to_replace='None',value=np.NaN).dropna()
+
+    # Convert Assignment_due column to datetime format
+    data['Assignment_due'] = pd.to_datetime(data['Assignment_due'])
+    # Extract weekday names and assign to a new column
+    data['Weekday'] = data['Assignment_due'].dt.strftime('%A')
+    # Drop the original Assignment_due column
+    data.drop('Assignment_due', axis=1, inplace=True)
+
+    # Replace 'None' with NaN and drop NaN values
+    data = data.replace(to_replace='None', value=np.NaN).dropna()
 
 
     def submission_due():
@@ -42,6 +52,11 @@ if upload_file is not None:
         return tab1, tab2
 
         # return st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+
+
+    def scatter_():
+
+        pass
 
 
     def assignment_due():
@@ -99,6 +114,6 @@ if upload_file is not None:
 
     # st.area_chart(report)
 
-    # submission_due()
+    submission_due()
     # st.pyplot(assignment_due())
     assignment_due()
