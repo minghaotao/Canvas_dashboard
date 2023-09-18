@@ -54,9 +54,9 @@ if upload_file is not None:
         # return st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
 
-    def scatter_():
+    # def scatter_():
 
-        pass
+    #     pass
 
 
     def assignment_due():
