@@ -59,7 +59,7 @@ if upload_file is not None:
 
         tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 
-        filtered_data['Assignment_due'] = pd.to_datetime(data['Assignment_due'], format='%Y/%m/%d')
+        filtered_data['Assignment_due'] = pd.to_datetime(data['Assignment_due'], format='%Y-%m-%dT%H:%M:%SZ')
         filtered_data.set_index('Assignment_due', inplace=True)
         report = filtered_data['Submission_type'].resample('D').agg({'value_counts'})[
             'value_counts'].unstack().fillna(0)
