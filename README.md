@@ -27,3 +27,5 @@ The 'Assessment.py' file is designed to analyze assessment usage reports.
 ## Streamlit App link
 https://minghaotao-canvas-dashboard-dashboardhome-n5gpi5.streamlit.app/
 
+Upload the demo files from the demo folder to the Dashboard
+
