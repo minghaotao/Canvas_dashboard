@@ -25,5 +25,6 @@ The 'Assessment.py' file is designed to analyze assessment usage reports.
 - Number of Submission Types: Bar chart showing the distribution of submission types.
 - Raw Data: Access the underlying data used for visualization.
 
-
+## Streamlit App link
+https://minghaotao-canvas-dashboard-dashboardhome-n5gpi5.streamlit.app/
 
